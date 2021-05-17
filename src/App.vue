@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" class="">
       <router-link to="/">Home</router-link> |
       <router-link to="/main">Main</router-link> |
       <router-link to="/result">Result</router-link>
@@ -19,15 +19,6 @@
 }
 
 #nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  
 }
 </style>

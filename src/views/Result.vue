@@ -2,11 +2,14 @@
   <div>
     <div>
       <h3>최종점수</h3>
-      <h3>{{total_score}} 점</h3>
+      <h3>{{$store.getters.score}} 점</h3>
     </div>
     <div>
-      <button>다시하기</button>
-	  <button>처음으로</button>
+      <button @click="restart">다시하기</button>
+      <button @click="ready">처음으로</button>
+    </div>
+    <div>
+      랭킹
     </div>
   </div>
 </template>
@@ -22,6 +25,13 @@ export default Vue.extend({
     }
   },
   methods: {
+    restart() {
+      this.$store.dispatch("setting");
+      this.$router.push("/main");
+    },
+    ready() {
+      this.$router.push("/");
+    }
   },
 })
 

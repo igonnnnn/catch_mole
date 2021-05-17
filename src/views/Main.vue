@@ -5,17 +5,21 @@
       <span>점수 : {{ $store.getters.score }} 점</span>
     </div>
     <board
-      :row="3"
-      :col="3"
-      :start="isStart"
-      :pause="isPaused"
-      @hit="hit"
+      :row="$store.getters.row"
+      :col="$store.getters.col"
+      :start="$store.getters.start"
+      :pause="$store.getters.pause"
+      :data="$store.getters.data"
+      :fast="$store.getters.config === 1000"
+      @count="count"
     />
-    <div v-if="!isStart">
+    <div v-if="!$store.getters.start">
       <button type="button" @click="start">{{ "시작하기" }}</button>
     </div>
     <div v-else>
-      <button v-if="!isPaused" type="button" @click="pause">{{ "일시정지" }}</button>
+      <button v-if="!$store.getters.pause" type="button" @click="pause">
+        {{ "일시정지" }}
+      </button>
       <button v-else type="button" @click="resume">{{ "재개하기" }}</button>
       <button type="button" @click="stop">{{ "그만하기" }}</button>
     </div>
@@ -38,25 +42,23 @@ export default Vue.extend({
   },
   methods: {
     start() {
-      console.log("start");
-      this.isStart = true;
       this.$store.dispatch("startTimer");
     },
     pause() {
-      this.isPaused = true;
-      this.$store.dispatch("stopTimer");
+      this.$store.dispatch("pauseTimer");
     },
     resume() {
       this.$store.dispatch("resumeTimer");
-      this.isPaused = false;
     },
     stop() {
-      console.log("stop");
+      this.$store.dispatch("stopTimer");
+      this.$router.push("/");
     },
-    hit(type: string) {
+    count(cnt: number) {
       console.log("hit");
+      console.log(cnt);
+      this.$store.dispatch("count", cnt);
     }
   },
 })
-
 </script>

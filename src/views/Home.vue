@@ -43,22 +43,22 @@ export default Vue.extend({
     validation() {
       if (this.$store.getters.col < 2 || this.$store.getters.col > 7) {
         alert("열의 값은 2이상 7이하로 입력해주세요.");
-        this.$refs.iptCol.focus();
+        (this.$refs.iptCol as Vue & { focus: () => void }).focus();
         return false;
       }
       if (this.$store.getters.row < 2 || this.$store.getters.row > 7) {
         alert("행의 값은 2이상 7이하로 입력해주세요.");
-        this.$refs.iptRow.focus();
+        (this.$refs.iptRow as Vue & { focus: () => void }).focus();
         return false;
       }
       if (this.$store.getters.mole < 1) {
         alert("두더지의 값은 최소 1 이상으로 입력해주세요.");
-        this.$refs.iptMole.focus();
+        (this.$refs.iptMole as Vue & { focus: () => void }).focus();
         return false;
       } else {
         if (this.$store.getters.mole > (this.$store.getters.row * this.$store.getters.col / 2)) {
-          alert("두더지의 값은 " +  Math.floor(this.$store.getters.row * this.$store.getters.col / 2).toString() + "이하로 입력해주세요.");
-          this.$refs.iptMole.focus();
+          alert("두더지의 값은 "+ Math.floor(this.$store.getters.row * this.$store.getters.col / 2).toString() + "이하로 입력해주세요.");
+          (this.$refs.iptMole as Vue & { focus: () => void }).focus();
           return false;
         }
       }
@@ -81,7 +81,9 @@ export default Vue.extend({
     },
     start() {
       if (this.validation()) {
-        console.log("start");
+        this.$store.dispatch("setting").then(() => {
+          this.$router.push("/main");
+        });
       }
     }
   },
