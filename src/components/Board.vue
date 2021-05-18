@@ -12,9 +12,9 @@
         :key="'cell_' + row_index + '_' + col_index"
         class="cell"
       >
-        <img src="../assets/ground.png" class="ground" />
+        <img src="../assets/ground.png" class="ground" alt=""/>
         <mole
-          :show=" start && data[(row_index - 1) * col + (col_index - 1)] === 1"
+          :show="start && data[(row_index - 1) * col + (col_index - 1)] === 1"
           :pause="pause"
           :fast="fast"
           @onclick="$emit('count', 1)"
@@ -57,10 +57,10 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .board {
-  position: relative;
   display: inline-block;
+  position: relative;
   width: 100%;
-  height: 80vh;
+  height: 100%;
 }
 .row {
   display: flex;
@@ -69,14 +69,13 @@ export default Vue.extend({
 .cell {
   display: inline-block;
   position: relative;
-  border: 1px solid black;
   width: 100%;
-}
-.ground {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  & .ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-position-y: 0;
+  }
 }
 #paused_div {
   top: 0;
