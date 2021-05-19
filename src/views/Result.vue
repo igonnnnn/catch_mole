@@ -56,6 +56,13 @@ export default Vue.extend({
     & button {
       width: 20vw;
       height: 5vh;
+      background-color: lightgray;
+      font-weight: bold;
+      border: none;
+      &:hover {
+        background-color: grey;
+        color: white;
+      }
     }
     & :last-child {
       margin-left: 10px;

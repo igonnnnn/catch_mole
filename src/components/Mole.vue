@@ -4,54 +4,20 @@
 
 <script lang="ts">
 import Vue from "vue";
+import ItemMixin from "../mixin/ItemMixin";
 export default Vue.extend({
-  props: {
-    show: { type: Boolean, required: true, default: false },
-    pause: { type: Boolean, required: true, default: false },
-    fast: { type: Boolean, required: true, default: false },
-  },
+  mixins: [ItemMixin],
   name: "Mole",
-  data() {
-    return {
-      isShow: this.show,
-      hit: false,
-    };
-  },
-  computed: {
-    className(): Record<string, unknown> {
-      return {
-        show: this.show && !this.hit,
-        pause: this.pause,
-        fast: this.fast,
-        hit: this.hit,
-      };
-    },
-  },
-  beforeUpdate() {
-    if (!this.show) {
-      if (this.hit) this.hit = false;
-    }
-  },
-  methods: {
-    click() {
-      if (!this.hit) {
-        this.hit = true;
-        this.$emit("onclick");
-      }
-    }
-  },
-})
+});
 </script>
 <style lang="scss" scoped>
-@keyframes bombAnimation {
+@keyframes moleAnimation {
   0% {
     visibility: visible;
-    z-index: 100;
+    z-index: 2000;
   }
   50% {
     height: 100%;
-  }
-  100% {
   }
 }
 @keyframes hideAnimation {
@@ -65,26 +31,27 @@ export default Vue.extend({
   }
 }
 .mole {
-  background-image: url("../assets/mole.png");
+  background-image: url("../assets/images/mole.png");
   height: 0%;
-  background-size: 100%;
+  background-size: 75%;
+  background-position-x: 50%;
   background-repeat: no-repeat;
   visibility: hidden;
   position: absolute;
   bottom: 10%;
   width: 100%;
   &:hover {
-    cursor: url("../assets/hammer.png");
+    cursor: pointer;
   }
 }
 .hit {
   height: 100%;
   animation-name: hideAnimation;
   animation-duration: 0.5s;
-  background-image: url("../assets/mole_after_hit.png");
+  background-image: url("../assets/images/mole_after_hit.png");
 }
 .show {
-  animation-name: bombAnimation;
+  animation-name: moleAnimation;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-play-state: running;

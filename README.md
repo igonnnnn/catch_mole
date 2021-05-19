@@ -1,11 +1,47 @@
 # mole_game_project
-## 작성자: 이한울
-## Vue config info
 
-## Fetures
+## -- 작성자: 이한울
+
+## -- Fetures
+.storybook
+dist
+node_modules
+public
+src
+	assets
+		audio
+		images
+	components
+		Board.vue
+		Bomb.vue
+		Mole.vue
+		Ranking.vue
+	mixin
+		ItemMixin.ts
+	router
+		index.ts
+	store
+		index.ts
+	stories
+		Board.stories.js
+		Bomb.stories.js
+		Introduction.stories.mdx
+		Mole.stories.js
+		StoryPane.vue
+	views
+		Home.vue
+		Main.vue
+		Result.vue
+	App.vue
+	main.ts
+	shims-tsx.d.ts
+	shims-vue.d.ts
+babel.config.js
+package.json
+vue.config.js
 
 
-##  Development History
+##  -- Development History
 ### 2021.05.15 (토)
 project 셋팅 및 view 구조 작성
 ES Lint, Webpack, Typescript 설정
@@ -44,3 +80,17 @@ animation효과 개선
 	- 각 화면별 섹션 구분을 위해 header, main, footer 태그 사용
 	- 반응형 작업을 위해 vw, vh 단위 사용
 	- font에 대한 반응형 작업은 더 찾아봐야 됨
+
+
+## 2021.05.19 (수) 19:00
+Mixin 컴포넌트 추가
+	- 두더지, 폭탄 컴포넌트는 CSS만 다르고 동일한 기능
+	- mixin 컴포넌트로 공통 로직만 따로 빼서 mixin 컴포넌트로 생성
+
+Bgm 추가
+	- App.vue에서 배경음악 재생
+	- 두더지 또는 폭탄 클릭 시, 효과음 추가
+
+Storybook 추가
+@@ 추가는 했으나 적용하기에 어려움이 많음(처음 사용)
+@@ 과제 제출은 하기로 결정

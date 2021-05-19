@@ -4,56 +4,23 @@
 
 <script lang="ts">
 import Vue from "vue";
-export default Vue.extend({
-  props: {
-    show: { type: Boolean, required: true, default: false },
-    pause: { type: Boolean, required: true, default: false },
-    fast: { type: Boolean, required: true, default: false },
-  },
-  name: "Bomb",
-  data() {
-    return { hit: false };
-  },
-  computed: {
-    className(): Record<string, unknown> {
-      return {
-        show: this.show && !this.hit,
-        pause: this.pause,
-        fast: this.fast,
-        hit: this.hit,
-      };
-    },
-  },
-  beforeUpdate() {
-    if (!this.show) {
-      if (this.hit) this.hit = false;
-    }
-  },
+import ItemMixin from "../mixin/ItemMixin";
 
-  methods: {
-    click() {
-      if (!this.hit) {
-        this.hit = true;
-        this.$emit("onclick");
-      }
-    },
-  },
-})
+export default Vue.extend({
+  mixins: [ItemMixin],
+  name: "Bomb",
+});
 </script>
 
 <style lang="scss" scoped>
 @keyframes bombAnimation {
   0% {
     visibility: visible;
-    z-index: 100;
+    z-index: 2000;
   }
   50% {
     height: 60%;
     animation-play-state: paused;
-  }
-  100% {
-    visibility: none;
-    background-image: url("../assets/bomb.png");
   }
 }
 @keyframes hideAnimation {
@@ -67,7 +34,7 @@ export default Vue.extend({
   }
 }
 .bomb {
-  background-image: url("../assets/bomb.png");
+  background-image: url("../assets/images/bomb.png");
   height: 0%;
   background-size: 50%;
   left: 33%;
@@ -77,14 +44,14 @@ export default Vue.extend({
   bottom: 10%;
   width: 100%;
   &:hover {
-    cursor: url("../assets/hammer.png");
+    cursor: pointer;
   }
 }
 .hit {
   height: 60%;
   animation-name: hideAnimation;
   animation-duration: 0.5s;
-  background-image: url("../assets/mole_after_hit.png");
+  background-image: url("../assets/images/after_bomb.png");
 }
 .show {
   animation-name: bombAnimation;

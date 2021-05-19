@@ -39,7 +39,6 @@
       <button class="btn-start" type="button" @click="start">START</button>
     </main>
     <content class="background" />
-    <audio />
   </div>
 </template>
 
@@ -121,7 +120,7 @@ export default Vue.extend({
   width: 100vw;
   height: 100vh;
   background-color: none;
-  background-image: url("../assets/home_background.png");
+  background-image: url("../assets/images/home_background.png");
   background-size: 100%;
   background-repeat: no-repeat;
   opacity: 0.5;
@@ -137,7 +136,7 @@ export default Vue.extend({
   width: 100%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   letter-spacing: 1vw;
-  font-size: 7vw;
+  font-size: 100px;
   text-align: center;
   color: burlywood;
 }
@@ -150,7 +149,7 @@ export default Vue.extend({
   background-color: none;
   display: block;
   & div {
-    font-size: 5vw;
+    font-size: 50px;
     font-weight: bold;
     width: 100%;
     display: inline-flex;
@@ -163,7 +162,7 @@ export default Vue.extend({
       background: none;
       text-align: center;
       width: 50%;
-      font-size: 5vw;
+      font-size: 50px;
       border: none;
       &:focus {
         outline: none;
@@ -177,7 +176,7 @@ export default Vue.extend({
   & .btn-start {
     margin-top: 5px;
     background-color: lightgray;
-    font-size: 5vw;
+    font-size: 50px;
     font-weight: bold;
     border: none;
     width: 100%;

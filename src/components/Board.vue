@@ -4,7 +4,6 @@
       v-for="row_index in row"
       :key="'row_' + row_index"
       class="row"
-      :class="className"
       :style="'height: ' + String(80 / row) + 'vh'"
     >
       <div
@@ -12,23 +11,31 @@
         :key="'cell_' + row_index + '_' + col_index"
         class="cell"
       >
-        <img src="../assets/ground.png" class="ground" alt=""/>
+        <img src="../assets/images/ground.png" class="ground" alt=""/>
         <mole
           :show="start && data[(row_index - 1) * col + (col_index - 1)] === 1"
           :pause="pause"
           :fast="fast"
-          @onclick="$emit('count', 1)"
+          @onclick="
+            $refs.audioMole.play();
+            $emit('count', 1);
+          "
         />
         <bomb
           :show="start && data[(row_index - 1) * col + (col_index - 1)] === 2"
           :pause="pause"
           :fast="fast"
           :index="(row_index - 1) * col + (col_index - 1)"
-          @onclick="$emit('count', -1)"
+          @onclick="
+            $refs.audioBomb.play();
+            $emit('count', -1);
+          "
         />
       </div>
     </div>
     <div id="paused_div" :class="className" />
+    <audio ref="audioBomb" src="../assets/audio/bomb.mp3" />
+    <audio ref="audioMole" src="../assets/audio/mole.mp3" />
   </div>
 </template>
 
