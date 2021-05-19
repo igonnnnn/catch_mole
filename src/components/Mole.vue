@@ -14,7 +14,6 @@ export default Vue.extend({
 @keyframes moleAnimation {
   0% {
     visibility: visible;
-    z-index: 2000;
   }
   50% {
     height: 100%;
@@ -32,6 +31,7 @@ export default Vue.extend({
 }
 .mole {
   background-image: url("../assets/images/mole.png");
+  z-index: 100;
   height: 0%;
   background-size: 75%;
   background-position-x: 50%;

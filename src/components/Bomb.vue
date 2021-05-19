@@ -26,7 +26,6 @@ export default Vue.extend({
 @keyframes hideAnimation {
   0% {
     visibility: visible;
-    z-index: 100;
     height: 30%;
   }
   100% {
@@ -35,6 +34,7 @@ export default Vue.extend({
 }
 .bomb {
   background-image: url("../assets/images/bomb.png");
+  z-index: 100;
   height: 0%;
   background-size: cover;
   left: 33%;
