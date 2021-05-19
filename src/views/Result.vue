@@ -49,7 +49,6 @@ export default Vue.extend({
   }
   & .footer {
     position: absolute;
-    width: 100%;
     height: 10%;
     left: 30vw;
     bottom: 1vh;

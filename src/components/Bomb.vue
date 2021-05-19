@@ -36,13 +36,13 @@ export default Vue.extend({
 .bomb {
   background-image: url("../assets/images/bomb.png");
   height: 0%;
-  background-size: 50%;
+  background-size: cover;
   left: 33%;
   background-repeat: no-repeat;
   visibility: hidden;
   position: absolute;
   bottom: 10%;
-  width: 100%;
+  width: 50%;
   &:hover {
     cursor: pointer;
   }
