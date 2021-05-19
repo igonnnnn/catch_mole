@@ -3,15 +3,15 @@
 ## -- 작성자: 이한울
 
 ## -- Fetures
-.storybook
-dist
-node_modules
-public
-src
-	assets
-		audio
-		images
-	components
+######.storybook
+######dist
+######node_modules
+######public
+######src
+######	assets
+######		audio
+######		images
+######	components
 		Board.vue
 		Bomb.vue
 		Mole.vue
