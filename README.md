@@ -3,20 +3,20 @@
 ## -- 작성자: 이한울
 
 ## -- Fetures
-###### .storybook
-dist
-node_modules
-public
-src
-	assets
-		audio
-		images
-	components
-		Board.vue
-		Bomb.vue
-		Mole.vue
-		Ranking.vue
-	mixin
+.storybook  
+dist  
+node_modules    
+public  
+src  
+	assets  
+		audio  
+		images  
+	components  
+		Board.vue  
+		Bomb.vue  
+		Mole.vue  
+		Ranking.vue  
+	mixin  
 		ItemMixin.ts
 	router
 		index.ts
