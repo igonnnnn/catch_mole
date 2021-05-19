@@ -4,44 +4,43 @@
 
 ## -- Fetures
 ###### Directory
-.storybook
-dist
-node_modules    
-public  
-src  
-	assets  
-		audio  
-		images  
-	components  
-		Board.vue  
-		Bomb.vue  
-		Mole.vue  
-		Ranking.vue  
-	mixin  
-		ItemMixin.ts
-	router
-		index.ts
-	store
-		index.ts
-	stories
-		Board.stories.js
-		Bomb.stories.js
-		Introduction.stories.mdx
-		Mole.stories.js
-		StoryPane.vue
-	views
-		Home.vue
-		Main.vue
-		Result.vue
-	App.vue
-	main.ts
-	shims-tsx.d.ts
-	shims-vue.d.ts
-babel.config.js
-package.json
-vue.config.js
-
-
+	.storybook
+	dist
+	node_modules
+	public
+	src
+		assets
+			audio
+			images
+		components  
+			Board.vue  
+			Bomb.vue  
+			Mole.vue  
+			Ranking.vue  
+		mixin  
+			ItemMixin.ts
+		router
+			index.ts
+		store
+			index.ts
+		stories
+			Board.stories.js
+			Bomb.stories.js
+			Introduction.stories.mdx
+			Mole.stories.js
+			StoryPane.vue
+		views
+			Home.vue
+			Main.vue
+			Result.vue
+		App.vue
+		main.ts
+		shims-tsx.d.ts
+		shims-vue.d.ts
+		babel.config.js
+		package.json
+		vue.config.js
+		
 ##  -- Development History
 ### 2021.05.15 (토)
 project 셋팅 및 view 구조 작성
