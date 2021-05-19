@@ -76,7 +76,7 @@ export default Vue.extend({
     display: flex;
     text-align: center;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 20px;
     & div {
       width: 50%;
     }

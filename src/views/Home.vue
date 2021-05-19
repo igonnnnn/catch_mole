@@ -136,7 +136,7 @@ export default Vue.extend({
   width: 100%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   letter-spacing: 1vw;
-  font-size: 100px;
+  font-size: 50px;
   text-align: center;
   color: burlywood;
 }
@@ -149,7 +149,7 @@ export default Vue.extend({
   background-color: none;
   display: block;
   & div {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     width: 100%;
     display: inline-flex;
@@ -162,7 +162,7 @@ export default Vue.extend({
       background: none;
       text-align: center;
       width: 50%;
-      font-size: 50px;
+      font-size: 40px;
       border: none;
       &:focus {
         outline: none;
@@ -176,11 +176,11 @@ export default Vue.extend({
   & .btn-start {
     margin-top: 5px;
     background-color: lightgray;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     border: none;
     width: 100%;
-    height: 7vh;
+    height: 100%;
     &:hover {
       background-color: grey;
       color: white;
